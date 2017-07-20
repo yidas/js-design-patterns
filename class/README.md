@@ -4,7 +4,7 @@ Class
 
 [create an anchor](#constructor Class)
 
-# Header2
+# Header 2
 
 ### Constructor Class
 
