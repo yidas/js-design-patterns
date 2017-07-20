@@ -1,6 +1,10 @@
 Class 
 =====
+[Link-name2](#Header2)
 
+[create an anchor](#Constructor Class)
+
+# Header2
 
 ### Constructor Class
 
