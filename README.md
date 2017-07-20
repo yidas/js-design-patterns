@@ -1,1 +1,4 @@
-# js-design-patterns
+JavaScript *Design Patterns*
+============================
+
+*Comming soon...*
