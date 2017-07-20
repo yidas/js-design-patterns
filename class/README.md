@@ -8,7 +8,7 @@ Class
 - [Static Class](#static-class)
 
 
-### Constructor Class
+## Constructor Class
 
 ```
 var Class = function (options) {
@@ -21,7 +21,7 @@ class1.render();
 
 ---
 
-### Literals Object
+## Literals Object
 
 JavaScript靜態物件的第一個想法，
 
@@ -37,7 +37,7 @@ Class.render();
 
 ---
 
-### Static Class
+## Static Class
 
 目前我靜態物件的最佳解
 
@@ -48,8 +48,6 @@ var Class = new function (options) {
 
 Class.render(); 
 ```
-
----
 
 承上，此寫法是為了解決`this`問題，在Literals Object內無法宣告Class級區域變數例如：
 
