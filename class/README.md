@@ -1,8 +1,8 @@
 Class 
 =====
-[Link-name2](#Header2)
+[Link-name2](#header2)
 
-[create an anchor](#Constructor Class)
+[create an anchor](#constructor Class)
 
 # Header2
 
