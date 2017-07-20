@@ -1,9 +1,11 @@
 Class 
 =====
 
-[Constructor Class](#constructor-class)
+- [Constructor Class](#constructor-class)
 
-[Literals Object](#literals-object)
+- [Literals Object](#literals-object)
+
+- [Static Class](#static-class)
 
 
 ### Constructor Class
