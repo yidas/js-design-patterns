@@ -10,7 +10,7 @@ Class
 
 ## Constructor Class
 
-```
+```javascript
 var Class = function (options) {
     this.render = function () {}
 };
@@ -25,7 +25,7 @@ class1.render();
 
 JavaScript靜態物件的第一個想法，
 
-```
+```javascript
 var Class =  {
     render : function () {}
 };
@@ -41,7 +41,7 @@ Class.render();
 
 目前我靜態物件的最佳解
 
-```
+```javascript
 var Class = new function (options) {
     this.render = function () {}
 };
@@ -51,7 +51,7 @@ Class.render();
 
 承上，此寫法是為了解決`this`問題，在Literals Object內無法宣告Class級區域變數例如：
 
-```
+```javascript
 var Class = new function (options) {
     var self = this;
     self.render = function () {}
