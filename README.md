@@ -1,7 +1,7 @@
 JavaScript *Design Patterns*
 ============================
 
-collection of articles and codes about how to write better JavaScript
+Collection of articles and codes about how to write better JavaScript
 
 ---
 
