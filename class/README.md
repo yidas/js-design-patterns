@@ -15,8 +15,8 @@ var Class = function (options) {
     this.render = function () {}
 };
 
-var class1 = new Class();
-class1.render(); 
+var object1 = new Class();
+object1.render(); 
 ```
 
 ---
