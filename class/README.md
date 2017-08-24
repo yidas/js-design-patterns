@@ -57,3 +57,5 @@ var Class = new function (options) {
     self.render = function () {}
 };
 ```
+
+> 另一種寫法：`var Class = (function(){}())`
