@@ -50,7 +50,7 @@ Class.render();
 ```
 
 > 承上，此寫法是為了解決`this`問題，在Literals Object內無法宣告Class級區域變數例如：
-
+> 
 > ```javascript
 > var Class = new function (options) {
 >     var self = this;
