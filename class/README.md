@@ -70,3 +70,12 @@ var Class = (function (options) {
 
 Class.render(); 
 ```
+
+---
+
+ADDITION 
+--------
+
+### Use Strict
+
+[JavaScript Use Strict](https://www.w3schools.com/js/js_strict.asp)(嚴謹模式)建議使用在物件撰寫中。
