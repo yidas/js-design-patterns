@@ -49,13 +49,24 @@ var Class = new function (options) {
 Class.render(); 
 ```
 
-承上，此寫法是為了解決`this`問題，在Literals Object內無法宣告Class級區域變數例如：
+> 承上，此寫法是為了解決`this`問題，在Literals Object內無法宣告Class級區域變數例如：
+
+> ```javascript
+> var Class = new function (options) {
+>     var self = this;
+>     self.render = function () {}
+> };
+> ```
+
+### 函式包裝回傳物件寫法(function(){})()
+
+另一種寫法，透過`return this`取得物件。
 
 ```javascript
-var Class = new function (options) {
-    var self = this;
-    self.render = function () {}
-};
-```
+var Class = (function (options) {
+    this.render = function () {}
+    return this;
+})();
 
-> 另一種寫法：`var Class = (function(){}())`
+Class.render(); 
+```
