@@ -58,7 +58,7 @@ Class.render();
 > };
 > ```
 
-### 函式包裝回傳物件寫法(function(){})()
+#### 函式包裝回傳物件寫法(function(){})()
 
 另一種寫法，透過`return this`取得物件。
 
