@@ -12,10 +12,10 @@ var Class = function (options) {
 
     "user strict";
 
-    /* Private Propertites */
-
     // Create self constant in class
     var self = this;
+
+    /* Private Propertites */
 
     // initialize options parameter for definition
     var o = options || {};
