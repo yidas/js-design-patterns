@@ -24,17 +24,25 @@
 
         var __construct = function() {
 
-            // Register events
-            initEvents();
+            // Bind events first
+            events();
+
+            // Run the controller
+            initialize();
+        };
+
+        /* Application Controller */
+        var initialize = function() {
 
             // Load Data Table
             self.loadData();
 
             // Initialize a select
             $('select[name=select]').change();
-        };
+        }
 
-        var initEvents = function() {
+        /* Application Initializing Events */
+        var events = function() {
 
             $('.btn-load').change(self.loadData());
 
