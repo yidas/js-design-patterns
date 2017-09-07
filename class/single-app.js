@@ -25,7 +25,7 @@
         var __construct = function() {
 
             // Bind events first
-            events();
+            bindEvents();
 
             // Run the controller
             initialize();
@@ -42,7 +42,7 @@
         }
 
         /* Application Initializing Events */
-        var events = function() {
+        var bindEvents = function() {
 
             $('.btn-load').change(self.loadData());
 
@@ -71,12 +71,19 @@
                 } 
 
                 // Call events after if needed
+                bindEventsAfterLoadData();
 
             }, 'json')
                 .error(function(xhr, ajaxOptions, thrownError) {
 
                     console.log(thrownError)
                 });
+        };
+        
+        /* Application Initializing Events */
+        var bindEventsAfterLoadData = function() {
+
+            // Code...
         };
 
         __construct();
