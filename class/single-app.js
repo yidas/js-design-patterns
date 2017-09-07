@@ -80,7 +80,7 @@
                 });
         };
         
-        /* Application Initializing Events */
+        /* Application Behavior Events */
         var bindEventsAfterLoadData = function() {
 
             // Code...
