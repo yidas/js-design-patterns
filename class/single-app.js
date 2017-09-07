@@ -67,11 +67,12 @@
                     $.each(res.data, function(key, row) {
 
                         // render table code..
+                        var $table = $('<table></table>');
                     });
                 } 
 
                 // Call events after if needed
-                bindEventsAfterLoadData();
+                bindEventsAfterLoadData($table);
 
             }, 'json')
                 .error(function(xhr, ajaxOptions, thrownError) {
@@ -81,9 +82,11 @@
         };
         
         /* Application Behavior Events */
-        var bindEventsAfterLoadData = function() {
+        var bindEventsAfterLoadData = function($table) {
 
-            // Code...
+            $table.find('td').click(function() {
+                // Code...
+            });
         };
 
         __construct();
