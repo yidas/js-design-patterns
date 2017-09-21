@@ -23,11 +23,10 @@ try {
     $.each(res.data, function(key, row) {
 
         // Row basic features
-        row.edit = '<center><i class="fa fa-pencil font-size_16 color_green Link btn-edit-modal" data-id="'+row.s_sn+'"></i></center>';
-        row.delete = '<center><i class="fa fa-trash font-size_16 color_red Link btn-delete" data-id="'+row.s_sn+'"></i></center>';
-        row.payment_belong = row.payment_belong_myear+ '/'+ row.payment_belong_month;
+        row.edit = '<i class="fa fa-pencil font-size_16 btn-edit" data-id="'+row.id+'"></i>';
+        row.delete = '<i class="fa fa-trash font-size_16 btn-delete" data-id="'+row.id+'"></i>';
 
-        var hash = row.u_sn+ '_'+  row.income_category;
+        var hash = row.u_id+ '_'+  row.category;
 
         if (lastHash===hash) {
 
@@ -35,7 +34,7 @@ try {
 
             // Check new head exist
             if (!lastHeadRow) {
-                console.log('Create a new head')
+                // console.log('Create a new head')
 
                 // Assign object reference
                 lastHeadRow = groupData[groupData.length-1]
@@ -46,26 +45,23 @@ try {
                 count++;
 
                 // Head row features
-                lastHeadRow.payment_date = '';
-                lastHeadRow.payment_belong = '';
                 lastHeadRow.edit = '';
                 lastHeadRow.delete = '';
                 // For display the number of sub rows of a group
-                lastHeadRow.groupTitle = lastHeadRow.income_category_title;
+                lastHeadRow.groupTitle = lastHeadRow.category_title;
         
             }
 
             // Head row features
-            lastHeadRow.income_category_title = lastHeadRow.groupTitle+ ' 共計'+ count +'筆';
-            lastHeadRow.payment_date = count;
+            lastHeadRow.category_title = lastHeadRow.groupTitle+ ' Total:'+ count;
 
             // Sum up to head
             var sumKeys = [
-                'amount_self', 
-                'amount_payment',
-                'amount_tax', 
-                'amount_2ndnhi',
-                'amount_total'
+                'amount_a', 
+                'amount_b',
+                'amount_c', 
+                'amount_d',
+                'amount_e'
                 ];
             $.each(sumKeys, function(key, sumKey) {
                 // console.log(sumKey)
@@ -92,17 +88,12 @@ try {
             row.edit,
             row.delete,
             row.user,
-            row.ins_setting,
-            row.payment_date,
-            row.payment_belong,
-            row.income_category_title,
-            '',
-            row.amount_self,
-            row.amount_payment,
-            row.amount_tax,
-            '',
-            row.amount_2ndnhi,
-            row.amount_total,
+            row.category_title,
+            row.amount_a,
+            row.amount_b,
+            row.amount_c,
+            row.amount_d,
+            row.amount_e,
         ] ).draw();
     });
 
