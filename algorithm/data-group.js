@@ -1,3 +1,6 @@
+// AJAX response sample
+var res.data = [{'id':1, 'category': 'a'}, {'id':2, 'category': 'a'}, {'id':3, 'category': 'b'}];
+
 var dataTree = {};
 
 $.each(res.data, function(key, row) {
