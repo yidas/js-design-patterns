@@ -109,7 +109,7 @@ var Class = new function (options) {
     this.render = function() {}
     var init = (function() {
         this.render();
-    }).bind(this)
+    }).bind(this);
     init();
 };
 ```
