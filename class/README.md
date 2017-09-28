@@ -54,18 +54,11 @@ Class.render();
 ```
 
 此寫法支援宣告區域變數，以補足`Literals Object`的缺點：
-> 
-> ```javascript
-> var Class = new function (options) {
->     var self = this;
->     var init = function () {}
->     init();
-> };
-> ```
+
 
 #### 函式包裝回傳物件寫法(function(){})()
 
-另一種寫法，透過`return this`取得物件。
+另一種直接生成寫法，但須透過`return this`取得物件。
 
 ```javascript
 var Class = (function (options) {
