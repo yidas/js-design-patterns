@@ -45,8 +45,8 @@ Class.render();
 ```javascript
 var Class = new function (options) {
     var self = this;
-    var construtor = function() {}
-    this.render = function() {}
+    var construtor = function() {}
+    this.render = function() {}
     construtor();
 };
 
@@ -63,10 +63,10 @@ Class.render();
 ```javascript
 var Class = (function (options) {
     this.render = function () {}
-    return this;
+    return this;
 })();
 
-Class.render(); 
+Class.render();
 ```
 
 ---
@@ -89,9 +89,9 @@ ADDITION
 var Class = new function (options) {
     var self = this;
     this.render = function() {}
-    var init = function() {
-        self.render();
-    }
+    var init = function() {
+        self.render();
+    }
     init();
 };
 ```
@@ -104,10 +104,10 @@ var Class = new function (options) {
 var Class = new function (options) {
     var self = this;
     this.render = function() {}
-    var init = (function() {
-        this.render();
-    }).bind(this);
-    init();
+    var init = (function() {
+        this.render();
+    }).bind(this);
+    init();
 };
 ```
 
