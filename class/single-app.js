@@ -5,91 +5,99 @@
  */
 (function ($) {
 
-    // Bootstrap
-    $(document).ready(function() {
+  // Bootstrap
+  $(document).ready(function() {
 
-        new App;
-    });
+    new App;
+  });
+
+  /** 
+   * Single Page Application
+   */
+  var App = function(options) {
+
+    "use strict";
+    var self = this;
+    // Application Options initialize
+    var options = options || {};
+    // Application element
+    var el = options.el || options.element || '#content';
 
     /** 
-     * Single Page Application
+     * Application Variables Declaration
      */
-    var App = function() {
+    var editSN = 0;
 
-        "user strict";
-        var self = this;
+    /* Constructor */
+    var constructor = function(options) {
 
-        // Private variable
-        var editSN = 0;
+      self.events(el);
+      self.initialize();
+    }
 
-        var __construct = function() {
+    /* Application Controller */
+    self.initialize = function() {
 
-            // Bind events first
-            bindEvents();
+      // Load Data Table
+      self.loadData();
 
-            // Run the controller
-            initialize();
-        };
+      // Initialize a select
+      $('select[name=select]').change();
+    }
 
-        /* Application Controller */
-        var initialize = function() {
-
-            // Load Data Table
-            self.loadData();
-
-            // Initialize a select
-            $('select[name=select]').change();
-        }
-
-        /* Application Initializing Events */
-        var bindEvents = function() {
-
-            $('.btn-load').change(self.loadData());
-
-            $('input[name=status]').change(function() {
-
-                // code..
-            });
-        };
-
-        // Public function
-        self.loadData = function() {
-
-            // Catch outer variable example
-            var url = viewData.ajaxUrl.index;
-
-            // Get data by AJAX
-            $.get(url, function(res) {
-
-                if (res.code==200 && res.data) {
-
-                    // Render
-                    $.each(res.data, function(key, row) {
-
-                        // render table code..
-                        var $table = $('<table></table>');
-                    });
-                } 
-
-                // Call events after if needed
-                bindEventsAfterLoadData($table);
-
-            }, 'json')
-                .error(function(xhr, ajaxOptions, thrownError) {
-
-                    console.log(thrownError)
-                });
-        };
+    /* Application Events */
+    self.events = function(el) {
         
-        /* Application Behavior Events */
-        var bindEventsAfterLoadData = function($table) {
+      // Use jQuery selector
+      var $el = $(el);
 
-            $table.find('td').click(function() {
-                // Code...
-            });
-        };
+      $el.find('.btn-load').change(self.loadData());
 
-        __construct();
+      $el.find('input[name=status]').change(function() {
+
+        // code..
+      });
     };
+
+    // Public function
+    self.loadData = function() {
+
+      // Catch outer variable example
+      var url = viewData.ajaxUrl.index;
+
+      // Get data by AJAX
+      $.get(url, function(res) {
+
+        if (res.code==200 && res.data) {
+
+          // Render
+          $.each(res.data, function(key, row) {
+
+            // render table code..
+            var $table = $('<table></table>');
+          });
+        } 
+
+        // Call events after if needed
+        eventsAfterLoadData($table);
+
+      }, 'json')
+        .error(function(xhr, ajaxOptions, thrownError) {
+
+          console.log(thrownError)
+        });
+    };
+    
+    /* Application Behavior Events */
+    var eventsAfterLoadData = function($table) {
+
+      $table.find('td').click(function() {
+        // Code...
+      });
+    };
+
+    // Implement Constructor
+    constructor(options);
+  };
 
 })(jQuery);
