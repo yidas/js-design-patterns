@@ -33,7 +33,8 @@ var Class =  {
 Class.render(); 
 ```
 
-架構不錯，但到了使用`this`就會有瓶頸，例如callback內function蓋掉了`this`時得每次重複宣告，抑或callback內call function蓋掉了`this`得用帶parameter解決。
+架構不錯，缺點為在物件內無法宣告區域變數(亦即達不到`private`變數或方法)。
+若在物件方法中再次用到`function`，且須使用`this`指到物件本身就會有瓶頸，得每次帶入物件‵this‵本身，而無法從物件那層定義個物件區域變數代表`this`。
 
 ---
 
@@ -43,13 +44,16 @@ Class.render();
 
 ```javascript
 var Class = new function (options) {
-    this.render = function () {}
+    var self = this;
+    var construtor = function() {}
+    this.render = function() {}
+    construtor();
 };
 
 Class.render(); 
 ```
 
-> 承上，此寫法是為了支援宣告區域變數，在Literals Object內無法宣告Class級private function例如：
+此寫法支援宣告區域變數，以補足`Literals Object`的缺點：
 > 
 > ```javascript
 > var Class = new function (options) {
