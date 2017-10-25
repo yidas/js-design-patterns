@@ -27,7 +27,7 @@ var Organiztion3LayerMenu = function (options) {
   // Tree data
   self.treeData = options.treeData || null;
   // AJAX URL for loadData()
-  self.ajaxUrl = options.ajaxUrl || '/shared/org3layermenu_ajax';
+  self.ajaxUrl = options.ajaxUrl || '/lib/ajax/three-layer-menu';
 
 
   /* Constructor */
