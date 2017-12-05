@@ -19,6 +19,17 @@ var object1 = new Class();
 object1.render(); 
 ```
 
+以上是直覺寫法，但建議使用`prototype`來定義method(避免constructed重複宣告達到高效)：
+
+```javascript
+var Class = function (options) {};
+
+Class.prototype.render = function () {};
+
+var object1 = new Class();
+object1.render(); 
+```
+
 ---
 
 ## Literals Object
