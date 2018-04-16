@@ -20,14 +20,14 @@ Prototype 匿名設計模式
   // Prototype declares by using pointer
   Class.prototype.render = function () {
   
-  	var self = this;
+    var self = this;
     // Code...
   };
   
   // If the method is used for binding which would lost `this`
   Class.prototype.callback = function () {
   
-  	var self = Class;
+    var self = Class;
     // Code...
   };
 
