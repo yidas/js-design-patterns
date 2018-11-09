@@ -55,7 +55,7 @@ Class.render();
 
 ```javascript
 var Class = new function (options) {
-    var self = this;
+    var that = this;
     var construtor = function() {}
     this.render = function() {}
     construtor();
@@ -94,26 +94,26 @@ ADDITION
 
 `this`傳遞問題解決方法：
 
-#### 定義class self區域變數為this
+#### 定義class that區域變數為this
 
 ```javascript
 var Class = new function (options) {
-    var self = this;
+    var that = this;
     this.render = function() {}
     var init = function() {
-        self.render();
+        that.render();
     }
     init();
 };
 ```
 
-意即所有Class內部均透過`self`區域變數呼叫Class本身，保留內部巢狀this使用彈性。
+意即所有Class內部均透過`that`區域變數呼叫Class本身，保留內部巢狀this使用彈性。
 
 #### Bind This
 
 ```javascript
 var Class = new function (options) {
-    var self = this;
+    var that = this;
     this.render = function() {}
     var init = (function() {
         this.render();
