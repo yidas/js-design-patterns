@@ -84,6 +84,16 @@ Class.render();
 
 ---
 
+Property
+--------
+
+---
+
+閉包
+----
+
+---
+
 ADDITION 
 --------
 
