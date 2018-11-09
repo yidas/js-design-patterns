@@ -5,8 +5,8 @@ JavaScript Class Design partterns
     - [Constructor Class](#constructor-class)
     - [Literals Object](#literals-object)
     - [Static Class](#static-class)
-- Property
-- 閉包
+- [Prototype](#prototype)
+- [Closures 封閉函式](#closures-封閉函式)
 - [Additions](#additions)
     - [Use Strict](#use-strict)
     - [This 傳遞](#this-傳遞)
@@ -89,7 +89,7 @@ Prototype
 
 非靜態物件意即可以產生多個實例的類別，在設計時，可以使用原型(Prototype)，在 Constructor 外定義 方法(Method)，達到建立實例效能優化。
 
-```
+```javascript
 var Class = function() {};
 Class.prototype.message = function(s) {
   var msg = s + '';
