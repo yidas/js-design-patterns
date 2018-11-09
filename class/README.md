@@ -84,8 +84,23 @@ Class.render();
 
 ---
 
-Property
---------
+Prototype
+---------
+
+非靜態物件意即可以產生多個實例的類別，在設計時，可以使用原型(Prototype)，在 Constructor 外定義 方法(Method)，達到建立實例效能優化。
+
+```
+var Class = function() {};
+Class.prototype.message = function(s) {
+  var msg = s + '';
+};
+Class.prototype.addition = function(i, j) {
+  return (i * 2 + j * 2) / 2;
+};
+var instance = new Class();
+```
+
+> [JavaScript Prototype Operator Performance](https://jsperf.com/prototype-operator-performance)
 
 ---
 
