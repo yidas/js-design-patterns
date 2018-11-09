@@ -69,7 +69,7 @@ Class.render();
 此寫法支援宣告區域變數，以補足`Literals Object`的缺點：
 
 
-#### 函式包裝回傳物件寫法(function(){})()
+#### 函式包裝執行回傳物件寫法(function(){})()
 
 另一種直接生成寫法，但須透過`return this`取得物件。
 
@@ -89,8 +89,31 @@ Property
 
 ---
 
-閉包
-----
+Closures 封閉函式
+-----------------
+
+或稱匿名函式，大量用在JavaScript，除了定義，還可以直接執行形成封閉命名空間：
+
+```javascript
+(function ($) {
+  //...
+})(jQuery);
+```
+
+> 還可以在函式定義前加上「~」和「!」等符號來定義匿名函式，如`!function(){}()`
+
+### 閉包
+
+中文`閉包`一詞說法是指`函式巢狀函式`，應用為內部函式可以引用外部函式的引數和變數，引數和變數不會被垃圾回收機制收回：
+
+```javascript
+var f = (function (a) {
+  var base = 5;
+  function b() {alert(a+base);}
+  return b;
+})(2);
+```
+
 
 ---
 
