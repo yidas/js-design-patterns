@@ -1,14 +1,20 @@
-Class 
-=====
+JavaScript Class Design partterns
+=================================
 
-- [Constructor Class](#constructor-class)
+- Class Types
+    - [Constructor Class](#constructor-class)
+    - [Literals Object](#literals-object)
+    - [Static Class](#static-class)
+- Property
+- 閉包
+- Additions
+    - [Use Strict](#use-strict)
+    - [This 傳遞](#this-傳遞)
 
-- [Literals Object](#literals-object)
+CLASS TYPES
+-----------
 
-- [Static Class](#static-class)
-
-
-## Constructor Class
+### Constructor Class
 
 ```javascript
 var Class = function (options) {
@@ -30,9 +36,7 @@ var object1 = new Class();
 object1.render(); 
 ```
 
----
-
-## Literals Object
+### Literals Object
 
 JavaScript靜態物件的第一個想法，
 
@@ -47,9 +51,7 @@ Class.render();
 架構不錯，缺點為在物件內無法宣告區域變數(亦即達不到`private`變數或方法)。
 若在物件方法中再次用到`function`，且須使用`this`指到物件本身就會有瓶頸，得每次帶入物件`this`本身，而無法從物件那層定義個物件區域變數代表`this`。
 
----
-
-## Static Class
+### Static Class
 
 目前我靜態物件的最佳解
 
