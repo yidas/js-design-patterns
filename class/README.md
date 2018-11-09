@@ -1,13 +1,13 @@
 JavaScript Class Design partterns
 =================================
 
-- Class Types
+- [Class Types](#class-types)
     - [Constructor Class](#constructor-class)
     - [Literals Object](#literals-object)
     - [Static Class](#static-class)
 - Property
 - 閉包
-- Additions
+- [Additions](#additions)
     - [Use Strict](#use-strict)
     - [This 傳遞](#this-傳遞)
 
