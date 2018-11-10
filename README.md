@@ -13,7 +13,7 @@ OUTLINE
 - *[Case Study](https://github.com/yidas/js-design-patterns/tree/master/case-study)*
 
 - *[Class](https://github.com/yidas/js-design-patterns/tree/master/class)*  
-  How to design Object-oriented programming in JavaScript
+  *How to design Object-oriented programming in JavaScript*
 
 - *[Error Handler](https://github.com/yidas/js-design-patterns/tree/master/error-handler)*
 
