@@ -163,13 +163,30 @@ var Class = new function (options) {
 
 ```javascript
 var Class = new function (options) {
+
     var that = this;
     this.render = function() {}
+    
     var init = (function() {
         this.render();
     }).bind(this);
+    
     init();
 };
 ```
 
 使用[Bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)方法將Class級`this`傳遞進去取代內部`this`，微升效能但每次須使用得各自宣告。
+
+```javascript
+var Class = new function (options) {
+
+    var that = this;
+    this.render = function() {}
+    
+    var init = function() {
+        this.render();
+    };
+    
+    init.bind(this)();
+};
+```
